@@ -7,6 +7,8 @@ import Performance from 'assets/images/key-feature/performance.svg';
 import Partnership from 'assets/images/key-feature/partnership.svg';
 import Subscription from 'assets/images/key-feature/subscription.svg';
 import Support from 'assets/images/key-feature/support.svg';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const data = [
   {
@@ -43,9 +45,23 @@ const data = [
   },
 ];
 
+const sectionVariants = {
+  hidden: {opacity: 0, y: '50vh'},
+  visible: {opacity: 1, y: 0},
+}
+
 export default function KeyFeature() {
+  const [ref, inView] = useInView({threshold: 0.1});
+
   return (
-    <section sx={{ variant: 'section.keyFeature' }} id="feature">
+    <motion.section
+      id="feature"
+      ref={ref}
+      sx={{ variant: 'section.keyFeature' }}
+      variants={sectionVariants}
+      animate={inView ? "visible" : "hidden"}
+      initial="hidden"
+      transition={{ type: "spring", stiffness: 100 }}>
       <Container>
         <SectionHeader
           slogan="Mengapa memilih kami"
@@ -64,7 +80,7 @@ export default function KeyFeature() {
           ))}
         </Grid>
       </Container>
-    </section>
+    </motion.section>
   );
 }
 

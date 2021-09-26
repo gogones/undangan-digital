@@ -3,10 +3,29 @@ import { jsx, Box, Flex, Image, Heading, Text } from 'theme-ui';
 import { Link } from 'components/link';
 import { rgba } from 'polished';
 import chat from 'assets/images/icons/chat.png';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const MotionBox = motion(Box, {
+    forwardMotionProps: true
+});
+
+const variants = {
+  hidden: {opacity: 0, rotateY: 90},
+  visible: {opacity: 1, rotateY: 0}
+};
 
 const BlogPost = ({ post }) => {
+  const [ref, inView] = useInView();
+
   return (
-    <Box sx={styles.post}>
+    <MotionBox
+      ref={ref}
+      sx={styles.post}
+      variants={variants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      transition={{ type: "spring", stiffness: 100 }}>
       <Flex as="figure" sx={styles.postImage}>
         <Image loading="lazy" src={post?.thumb} alt={post?.title} />
       </Flex>
@@ -19,7 +38,7 @@ const BlogPost = ({ post }) => {
           {post?.commentCount} Comments
         </Text> */}
       </Box>
-    </Box>
+    </MotionBox>
   );
 };
 

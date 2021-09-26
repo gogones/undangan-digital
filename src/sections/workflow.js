@@ -6,6 +6,8 @@ import SectionHeader from 'components/section-header';
 import PatternBG from 'assets/images/workflow/patternBG.png';
 import ArrowOdd from 'assets/images/workflow/arrowOdd.svg';
 import ArrowEven from 'assets/images/workflow/arrowEven.svg';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const data = [
   {
@@ -34,10 +36,25 @@ const data = [
   },
 ];
 
+const variants = {
+  hidden: {opacity: 0, y: 100},
+  visible: {opacity: 1, y: 0},
+}
+
+const MotionContainer = motion(Container, {
+    forwardMotionProps: true
+});
+
 export default function WorkFlow() {
+  const [ref, inView] = useInView({threshold: 0.5});
+
   return (
     <section sx={styles.workflow}>
-      <Container>
+      <MotionContainer
+        ref={ref}
+        variants={variants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}>
         <SectionHeader
           slogan="Whats the function"
           title="Let’s see how it works"
@@ -55,7 +72,7 @@ export default function WorkFlow() {
             </Box>
           ))}
         </Grid>
-      </Container>
+      </MotionContainer>
     </section>
   );
 }

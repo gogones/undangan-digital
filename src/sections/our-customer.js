@@ -1,27 +1,45 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Image, Flex, Link } from 'theme-ui';
+import { jsx, Box, Container, Image, Flex} from 'theme-ui';
+import {motion} from 'framer-motion';
 import SectionHeading from 'components/section-heading';
 import customer from 'assets/images/customer.png';
+import { useInView } from 'react-intersection-observer';
 
+const MotionFlex = motion(Flex, {
+    forwardMotionProps: true
+})
 const OurCustomer = () => {
-  return (
-    <Box as="section" sx={styles.section}>
-      <Container>
-        <Flex sx={styles.contentWrapper}>
-          <Flex as="figure" sx={styles.illustration}>
-            <Image loading="lazy" src={customer} alt="customer" />
-          </Flex>
+  const [ref, inView] = useInView();
 
-          <Box sx={styles.rightContent}>
-            <SectionHeading
-              sx={styles.heading}
-              title="Apa itu undangan digital"
-              description="Undangan digital adalah undangan yang dapat di akses menggunakan smartphone, tablet bahkan desktop atau laptop melalui jaringan internet. Sehingga undangan digital mempermudah mu untuk berbagi undangan ke relasi mu"
-            />
-          </Box>
-        </Flex>
-      </Container>
-    </Box>
+  const variants = {
+    visible: {opacity: 1, x: 0},
+    hidden: {opacity: 0, x: '-10vw'},
+  }
+
+  return (
+      <Box as="section" sx={styles.section}>
+        <Container>
+          <MotionFlex
+            variants={variants}
+            sx={styles.contentWrapper}
+            ref={ref}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            transition={{ type: "spring", stiffness: 100 }}>
+            <Flex as="figure" sx={styles.illustration}>
+              <Image loading="lazy" src={customer} alt="customer" />
+            </Flex>
+
+            <Box sx={styles.rightContent}>
+              <SectionHeading
+                sx={styles.heading}
+                title="Undangan Digital"
+                description="Undangan digital adalah undangan yang dapat di akses menggunakan smartphone, tablet bahkan desktop atau laptop melalui jaringan internet. Sehingga undangan digital mempermudah mu untuk berbagi undangan ke relasi mu"
+              />
+            </Box>
+          </MotionFlex>
+        </Container>
+      </Box>
   );
 };
 

@@ -1,9 +1,28 @@
 /** @jsx jsx */
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { jsx, Box, Heading, Text } from 'theme-ui';
 
+const MotionBox = motion(Box, {
+    forwardMotionProps: true
+});
+
+const variants = {
+  hidden: {opacity: 0},
+  visible: {opacity: 1}
+}
+
 const SectionHeading = ({ slogan, title, description, ...props }) => {
+  const [ref, inView] = useInView();
+
   return (
-    <Box sx={styles.headingWrapper} {...props}>
+    <MotionBox
+      ref={ref}
+      sx={styles.headingWrapper}
+      variants={variants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      {...props}>
       {slogan && (
         <Text sx={styles.slogan} as="p">
           {slogan}
@@ -15,7 +34,7 @@ const SectionHeading = ({ slogan, title, description, ...props }) => {
           {description}
         </Text>
       )}
-    </Box>
+    </MotionBox>
   );
 };
 
