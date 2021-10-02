@@ -22,16 +22,16 @@ const data = [
   {
     id: 2,
     imgSrc: Partnership,
-    altText: 'Partnership deal',
-    title: 'Partnership deal',
+    altText: 'Simple',
+    title: 'Simple',
     text:
       'Simple, mudah dan tidak ribet',
   },
   {
     id: 3,
     imgSrc: Subscription,
-    altText: 'Pro Subscription',
-    title: 'Pro Subscription',
+    altText: 'Safe',
+    title: 'Safe',
     text:
       'Data mu aman bersama kami',
   },

@@ -2,7 +2,7 @@
 import { jsx, Box, Container, Image, Flex} from 'theme-ui';
 import {motion} from 'framer-motion';
 import SectionHeading from 'components/section-heading';
-import customer from 'assets/images/customer.png';
+import invitation from 'assets/images/customer/invitation.jpg';
 import { useInView } from 'react-intersection-observer';
 
 const MotionFlex = motion(Flex, {
@@ -27,7 +27,7 @@ const OurCustomer = () => {
             animate={inView ? "visible" : "hidden"}
             transition={{ type: "spring", stiffness: 100 }}>
             <Flex as="figure" sx={styles.illustration}>
-              <Image loading="lazy" src={customer} alt="customer" />
+              <Image loading="lazy" src={invitation} alt="invitation" />
             </Flex>
 
             <Box sx={styles.rightContent}>

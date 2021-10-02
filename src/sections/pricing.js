@@ -9,52 +9,76 @@ import SectionHeading from 'components/section-heading';
 const data = [
   {
     id: 1,
-    title: 'Sakinah',
-    amount: 18.99,
-    is_recommended: false,
-    library_access: true,
-    multiple_user: true,
-    refund_policy: false,
-    google_analytics: false,
-    support: false,
-    trial_period: 15,
+    title: 'Subsidi',
+    amount: 75,
+    isRecommended: false,
+    website: true,
+    music: true,
+    detail: true,
+    maps: true,
+    amplop: true,
+    gallery: true,
+    countdown: false,
+    story: false,
+    spv: false,
+    doa: false,
+    inviteLink: false,
+    qr: false
   },
   {
     id: 2,
-    title: 'Mawaddah',
-    amount: 23.99,
-    is_recommended: true,
-    library_access: true,
-    multiple_user: true,
-    refund_policy: true,
-    google_analytics: false,
-    support: false,
-    trial_period: 30,
+    title: 'Biasa',
+    amount: 150,
+    isRecommended: true,
+    website: true,
+    music: true,
+    detail: true,
+    maps: true,
+    amplop: true,
+    gallery: true,
+    countdown: true,
+    story: true,
+    spv: true,
+    doa: false,
+    inviteLink: false,
+    qr: false
   },
-  // {
-  //   id: 3,
-  //   title: 'Custom Pack',
-  //   amount: 29.99,
-  //   is_recommended: false,
-  //   library_access: true,
-  //   multiple_user: true,
-  //   refund_policy: true,
-  //   google_analytics: true,
-  //   support: false,
-  //   trial_period: 30,
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Ultimate Pack',
-  //   amount: 35.99,
-  //   is_recommended: false,
-  //   library_access: true,
-  //   multiple_user: true,
-  //   refund_policy: true,
-  //   google_analytics: true,
-  //   support: true,
-  //   trial_period: 45,
-  // },
+  {
+    id: 3,
+    title: 'Orang Kaya',
+    amount: 175,
+    isRecommended: false,
+    website: true,
+    music: true,
+    detail: true,
+    maps: true,
+    amplop: true,
+    gallery: true,
+    countdown: true,
+    story: true,
+    spv: true,
+    doa: true,
+    inviteLink: true,
+    qr: false
+  },
+  {
+    id: 4,
+    title: 'Sultan',
+    amount: 350,
+    isRecommended: false,
+    website: true,
+    music: true,
+    detail: true,
+    maps: true,
+    amplop: true,
+    gallery: true,
+    countdown: true,
+    story: true,
+    spv: true,
+    doa: true,
+    inviteLink: true,
+    qr: true
+  },
 ];
 
 const settings = {
@@ -104,11 +128,18 @@ const Pricing = () => {
         <Box sx={styles.grid}>
           {isTablet && (
             <ul as="ul" sx={styles.features}>
-              <li>Full Access Library</li>
-              <li>Multiple user</li>
-              <li>Refund Policy</li>
-              <li>Google Analytics</li>
-              <li>24/7 support</li>
+              <li>Alamat Website</li>
+              <li>Quotes & Musik</li>
+              <li>Detail Acara</li>
+              <li>Maps</li>
+              <li>Amplop Digital</li>
+              <li>Gallery Foto & Video</li>
+              <li>Countdown Acara</li>
+              <li>Love Story</li>
+              <li>Kehadiran Tamu</li>
+              <li>Doa & Harapan</li>
+              <li>Special Invite Link</li>
+              <li>Checkin w/ QR COde</li>
             </ul>
           )}
 
@@ -175,7 +206,7 @@ const styles = {
     gap: 2,
     alignItems: 'flex-end',
     display: [null, null, null, null, 'grid'],
-    gridTemplateColumns: [null, null, null, null, 'repeat(2, 1fr)'],
+    gridTemplateColumns: [null, null, null, null, 'repeat(4, 1fr)'],
   },
   features: {
     pl: 0,
@@ -184,8 +215,8 @@ const styles = {
       null,
       null,
       null,
-      'translateY(-10px)',
-      'translateY(-23px)',
+      'translateY(15px)',
+      'translateY(59px)',
     ],
     li: {
       display: 'flex',
@@ -193,7 +224,7 @@ const styles = {
       fontWeight: 500,
       minHeight: [null, null, null, null, 50, 59],
       '+ li': {
-        borderTop: (t) => `1px solid ${t.colors.borderColor}`,
+        borderTop: (t) => `1px solid ${t.colors.border_color}`,
       },
     },
   },

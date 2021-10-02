@@ -14,46 +14,73 @@ const FeatureIcon = ({ value }) => {
 
 const PriceTable = ({ data }) => {
   return (
-    <div sx={styles.card} className={data.is_recommended ? 'recommended' : ''}>
-      {data.is_recommended && <span sx={styles.recommended}>Recommended</span>}
+    <div sx={styles.card} className={data.isRecommended ? 'recommended' : ''}>
+      {data.isRecommended && <span sx={styles.recommended}>Recommended</span>}
       <div
         sx={styles.priceTable}
-        className={data.is_recommended ? 'recommended' : ''}
+        className={data.isRecommended ? 'recommended' : ''}
       >
         <span sx={styles.title}>{data.title}</span>
         <span sx={styles.amount}>
-          ${data.amount}
+          {data.amount}K
         </span>
         <Box as="ul" variant="styles.unStyled" sx={styles.features}>
           <li>
-            <span>Full Access Library</span>
-            <FeatureIcon value={data.library_access} />
+            <span>Alamat Website</span>
+            <FeatureIcon value={data.website} />
           </li>
           <li>
-            <span>Multiple user</span>
-            <FeatureIcon value={data.multiple_user} />
+            <span>Quotes & Musik</span>
+            <FeatureIcon value={data.music} />
           </li>
           <li>
-            <span>Refund Policy</span>
-            <FeatureIcon value={data.refund_policy} />
+            <span>Detail Acara</span>
+            <FeatureIcon value={data.detail} />
           </li>
           <li>
-            <span>Google Analytics</span>
-            <FeatureIcon value={data.google_analytics} />
+            <span>Maps</span>
+            <FeatureIcon value={data.maps} />
           </li>
           <li>
-            <span>24/7 support</span>
-            <FeatureIcon value={data.support} />
+            <span>Amplop Digital</span>
+            <FeatureIcon value={data.amplop} />
+          </li>
+          <li>
+            <span>Gallery Foto & Video</span>
+            <FeatureIcon value={data.gallery} />
+          </li>
+          <li>
+            <span>Countdown Acara</span>
+            <FeatureIcon value={data.countdown} />
+          </li>
+          <li>
+            <span>Love Story/ Share Moment</span>
+            <FeatureIcon value={data.story} />
+          </li>
+          <li>
+            <span>Kehadiran Tamu</span>
+            <FeatureIcon value={data.spv} />
+          </li>
+          <li>
+            <span>Do'a & Harapan</span>
+            <FeatureIcon value={data.doa} />
+          </li>
+          <li>
+            <span>Special Invite Link</span>
+            <FeatureIcon value={data.inviteLink} />
+          </li>
+          <li>
+            <span>Checkin QR Code</span>
+            <FeatureIcon value={data.qr} />
           </li>
         </Box>
         <Button
           sx={styles.button}
           variant="primaryOutline"
-          className={data.is_recommended ? 'recommended' : ''}
+          className={data.isRecommended ? 'recommended' : ''}
         >
-          Choose Plan
+          Pilih Paket
         </Button>
-        {/* <span sx={styles.trial}>{data.trial_period} days free trial</span> */}
       </div>
     </div>
   );
@@ -82,7 +109,7 @@ const styles = {
     mx: [null, null, null, 3, 0],
   },
   priceTable: {
-    border: (t) => `1px solid ${t.colors.borderColor}`,
+    border: (t) => `1px solid ${t.colors.border_color}`,
     borderRadius: 10,
     paddingTop: [4, null, null, null, 6],
     paddingBottom: [4, null, null, null, 6, 14],
@@ -119,7 +146,7 @@ const styles = {
     color: 'heading',
     display: 'block',
     fontWeight: 'bold',
-    fontSize: [4, null, null, 7, 4, 7],
+    fontSize: [4, null, null, 7, 4, 6],
     lineHeight: [1.3, null, null, 1.71],
     letterSpacing: 'heading',
     small: {
@@ -128,12 +155,12 @@ const styles = {
     },
   },
   features: {
-    my: [4, null, null, 8, 2, 8],
+    my: [4, null, null, 8, 2, 4],
     li: {
       alignItems: 'center',
-      borderTop: (t) => `1px solid ${t.colors.borderColor}`,
+      borderTop: (t) => `1px solid ${t.colors.border_color}`,
       display: 'flex',
-      color: ['heading', null, null, null, 'headingSecondary'],
+      color: ['heading', null, null, null, '#343D48'],
       fontSize: [1, null, null, null, 2],
       fontWeight: [500, null, null, null, 400],
       justifyContent: ['space-between', null, null, null, 'center'],

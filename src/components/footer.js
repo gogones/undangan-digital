@@ -43,14 +43,6 @@ export default function Footer() {
               All right reserved - Design &amp; Developed by RedQ, Inc
             </Text>
           </Flex>
-
-          <Flex as="ul" sx={styles.nav}>
-            {navItems?.map((item) => (
-              <li key={item.id}>
-                <Link path={item.link}>{item.title}</Link>
-              </li>
-            ))}
-          </Flex>
         </Flex>
       </Container>
     </Box>

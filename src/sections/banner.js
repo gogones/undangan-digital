@@ -106,7 +106,7 @@ const styles = {
       '50px 60px 90px',
     ],
     borderRadius: 5,
-    m: ['110px 0 0', null, null, '110px auto 0', '60px 0 0', null, 0],
+    m: ['110px 0 0', null, null, '110px auto 60px', '60px 0 60px', null, 0],
     '@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ': {
       maxWidth: 515,
       mt: 70,

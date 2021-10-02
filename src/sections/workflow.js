@@ -12,27 +12,27 @@ import { useInView } from 'react-intersection-observer';
 const data = [
   {
     id: 1,
-    title: 'Set disbursement Instructions',
+    title: 'Pilih Template',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Pilih template undangan yang kamu mau, berbagai macam pilihan template undangan digital yang indah bisa kamu pilih',
   },
   {
     id: 2,
-    title: 'Assembly retrieves funds from your account',
+    title: 'Pilih Paket',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Pilih paket yang kamu inginkan, tidak perlu ragu untuk memilih',
   },
   {
     id: 3,
-    title: 'Assembly initiates disbursement',
+    title: 'Hubungi Kami',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Hubungi kami setelah kamu selesai memilih dan tak perlu ragu jika ingin menanyakan beberapa hal',
   },
   {
     id: 4,
-    title: 'Customer receives funds payment',
+    title: 'Undangan mu siap',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Tidak perlu waktu lama, undangan mu siap untuk di bagikan',
   },
 ];
 
@@ -56,8 +56,8 @@ export default function WorkFlow() {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}>
         <SectionHeader
-          slogan="Whats the function"
-          title="Let’s see how it works"
+          slogan="Langkah memesan"
+          title="Berikut langkah untuk memesan"
           isWhite={true}
         />
 
@@ -151,7 +151,7 @@ const styles = {
     alignItems: 'center',
     mb: [5, null, null, null, null, 6],
     mx: ['auto', null, 0],
-    fontSize: [6, null, 7, null, null, '30px'],
+    fontSize: [4, null, 4, null, null, '30px'],
     fontWeight: 700,
     justifyContent: 'center',
     color: '#234582',

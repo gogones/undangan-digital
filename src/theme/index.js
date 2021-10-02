@@ -293,6 +293,11 @@ export default {
   },
 
   styles: {
+    unStyled: {
+      listStyle: "none",
+      p: 0,
+      m: 0,
+    },
     // To add base, top-level styles to the <body> element, use theme.styles.root.
     root: {
       fontFamily: 'body',
