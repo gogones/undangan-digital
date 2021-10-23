@@ -15,6 +15,10 @@ const nextConfiguration = {
         source: '/templates',
         destination: `${TEMPLATE_URL}/templates`,
       },
+      {
+        source: '/templates/:path*',
+        destination: `${TEMPLATE_URL}/templates/:path*`,
+      },
     ]
   },
 };
