@@ -15,7 +15,7 @@ const variants = {
   visible: {opacity: 1, rotateY: 0}
 };
 
-const BlogPost = ({ post }) => {
+const BlogPost = ({ post, onClick }) => {
   const [ref, inView] = useInView();
 
   return (
@@ -25,7 +25,8 @@ const BlogPost = ({ post }) => {
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      transition={{ type: "spring", stiffness: 100 }}>
+      transition={{ type: "spring", stiffness: 100 }}
+      onClick={onClick}>
       <Flex as="figure" sx={styles.postImage}>
         <Image loading="lazy" src={post?.thumb} alt={post?.title} />
       </Flex>

@@ -8,6 +8,7 @@ import BlogPost from 'components/cards/blog-card';
 import thumb1 from 'assets/images/blog/1.png';
 import thumb2 from 'assets/images/blog/2.png';
 import thumb3 from 'assets/images/blog/3.png';
+import {useRouter} from "next/router";
 
 const data = [
   {
@@ -16,6 +17,7 @@ const data = [
     commentCount: 22,
     link: '#!',
     title: `Classic Template`,
+    url: '/templates/theme1'
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ const data = [
     commentCount: 15,
     link: '#!',
     title: `Modern Template`,
+    url: '/templates/theme1'
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ const data = [
     commentCount: 18,
     link: '#!',
     title: `National Template`,
+    url: '/templates/theme1'
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ const data = [
     commentCount: 15,
     link: '#!',
     title: `Cozy Template`,
+    url: '/templates/theme1'
   },
   {
     id: 5,
@@ -44,6 +49,7 @@ const data = [
     commentCount: 18,
     link: '#!',
     title: `Besto Place Template`,
+    url: '/templates/theme2'
   },
 ];
 
@@ -91,6 +97,7 @@ const settings = {
 };
 
 const Blog = () => {
+  const {push} = useRouter();
   return (
     <Box id="template" as="section" sx={styles.section}>
       <Container>
@@ -101,7 +108,7 @@ const Blog = () => {
         />
         <Slider sx={styles.blogWrapper} {...settings}>
           {data?.map((post) => (
-            <BlogPost key={post.id} post={post} />
+            <BlogPost key={post.id} post={post} onClick={() => push(post.url)} />
           ))}
         </Slider>
       </Container>
