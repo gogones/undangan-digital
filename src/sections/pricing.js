@@ -5,81 +5,7 @@ import { jsx, Box, Container } from 'theme-ui';
 import { useMediaQuery } from 'react-responsive';
 import PriceTable from 'components/cards/price-table';
 import SectionHeading from 'components/section-heading';
-
-const data = [
-  {
-    id: 1,
-    title: 'Subsidi',
-    amount: 75,
-    isRecommended: false,
-    website: true,
-    music: true,
-    detail: true,
-    maps: true,
-    amplop: true,
-    gallery: true,
-    countdown: false,
-    story: false,
-    spv: false,
-    doa: false,
-    inviteLink: false,
-    qr: false
-  },
-  {
-    id: 2,
-    title: 'Biasa',
-    amount: 150,
-    isRecommended: true,
-    website: true,
-    music: true,
-    detail: true,
-    maps: true,
-    amplop: true,
-    gallery: true,
-    countdown: true,
-    story: true,
-    spv: true,
-    doa: false,
-    inviteLink: false,
-    qr: false
-  },
-  {
-    id: 3,
-    title: 'Orang Kaya',
-    amount: 175,
-    isRecommended: false,
-    website: true,
-    music: true,
-    detail: true,
-    maps: true,
-    amplop: true,
-    gallery: true,
-    countdown: true,
-    story: true,
-    spv: true,
-    doa: true,
-    inviteLink: true,
-    qr: false
-  },
-  {
-    id: 4,
-    title: 'Sultan',
-    amount: 350,
-    isRecommended: false,
-    website: true,
-    music: true,
-    detail: true,
-    maps: true,
-    amplop: true,
-    gallery: true,
-    countdown: true,
-    story: true,
-    spv: true,
-    doa: true,
-    inviteLink: true,
-    qr: true
-  },
-];
+import {pricingList} from "../config/pricingList";
 
 const settings = {
   // slidesToShow: 3,
@@ -144,7 +70,7 @@ const Pricing = () => {
           )}
 
           <Slider sx={styles.priceGroup} {...settings}>
-            {data.map((price) => (
+            {pricingList.map((price) => (
               <PriceTable key={price.id} data={price} />
             ))}
           </Slider>

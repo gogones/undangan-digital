@@ -3,8 +3,14 @@
 import { jsx, Box, Button } from 'theme-ui';
 import { IoMdCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
 import { rgba } from 'polished';
+import {contactPerson} from "../../config/contactPerson";
+import {templatePesan} from "../../config/templatePesan";
 
-const FeatureIcon = ({ value }) => {
+const FeatureIcon = ({ value, number }) => {
+
+  if (number) {
+    return <span>{value}</span>
+  }
   return value ? (
     <IoMdCheckmarkCircle size="23px" color="#3CC68A" />
   ) : (
@@ -22,7 +28,7 @@ const PriceTable = ({ data }) => {
       >
         <span sx={styles.title}>{data.title}</span>
         <span sx={styles.amount}>
-          {data.amount}K
+          {data.harga}K
         </span>
         <Box as="ul" variant="styles.unStyled" sx={styles.features}>
           <li>
@@ -47,7 +53,7 @@ const PriceTable = ({ data }) => {
           </li>
           <li>
             <span>Gallery Foto & Video</span>
-            <FeatureIcon value={data.gallery} />
+            <FeatureIcon number={data.gallery} value={data.gallery} />
           </li>
           <li>
             <span>Countdown Acara</span>
@@ -67,17 +73,18 @@ const PriceTable = ({ data }) => {
           </li>
           <li>
             <span>Special Invite Link</span>
-            <FeatureIcon value={data.inviteLink} />
+            <FeatureIcon number={data.inviteLink} value={data.inviteLink} />
           </li>
           <li>
             <span>Checkin QR Code</span>
-            <FeatureIcon value={data.qr} />
+            <FeatureIcon number={data.qr} value={data.qr} />
           </li>
         </Box>
         <Button
           sx={styles.button}
           variant="primaryOutline"
           className={data.isRecommended ? 'recommended' : ''}
+          onClick={`https://wa.me/${contactPerson.nomor}?text=${templatePesan(data.id).tema}`}
         >
           Pilih Paket
         </Button>

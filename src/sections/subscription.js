@@ -1,13 +1,11 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Container, Input, Button } from 'theme-ui';
+import { jsx, Box, Container, Button } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import { rgba } from 'polished';
+import {contactPerson} from "../config/contactPerson";
+import {templatePesan} from "../config/templatePesan";
 
 const Subscription = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Submitted...`);
-  };
   return (
     <Box as="section" id="contact" sx={styles.section}>
       <Container>
@@ -17,14 +15,7 @@ const Subscription = () => {
             title="Ingin membuat undangan mu atau ada yang ingin ditanyakan, jangan ragu untuk hubungi kami"
             description=""
           />
-          <Button variant="white">Hubungi kami</Button>
-          {/* <Flex as="form" sx={styles.form} onSubmit={handleSubmit}>
-            <Box as="label" htmlFor="email" variant="styles.srOnly">
-              Email
-            </Box>
-            <Input type="email" id="email" placeholder="Enter your email" />
-            <Button variant="white">Hubungi kami</Button>
-          </Flex> */}
+          <Button variant="white" onClick={`https://wa.me/${contactPerson.nomor}?text=${templatePesan().unknown}`}>Hubungi kami</Button>
         </Box>
       </Container>
     </Box>
