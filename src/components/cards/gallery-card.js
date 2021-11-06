@@ -28,7 +28,7 @@ const styles = {
       'calc(33.3333% - 30px)',
     ],
     ':before': {
-      background: `linear-gradient(1.15deg, #020718 0.72%, rgba(255, 255, 255, 0) 41.15%)`,
+      background: `linear-gradient(1.15deg, #FF8099 0.72%, rgba(255, 255, 255, 0) 41.15%)`,
       borderRadius: 5,
       opacity: 0.7,
       content: `''`,

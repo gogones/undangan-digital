@@ -29,7 +29,7 @@ export default Subscription;
 
 const styles = {
   section: {
-    backgroundColor: '#020718',
+    backgroundColor: '#FF8099',
     pt: '60px',
     pb: '70px',
   },
@@ -74,7 +74,7 @@ const styles = {
     },
     button: {
       backgroundColor: '#fff',
-      color: '#020718',
+      color: '#FF8099',
       minHeight: [50, 50, 60],
       fontSize: [14, 16],
       padding: '0 30px',
@@ -84,7 +84,7 @@ const styles = {
       mt: [4, 0],
       ':hover': {
         backgroundColor: '#fff',
-        color: '#020718',
+        color: '#FF8099',
       },
     },
   },

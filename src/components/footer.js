@@ -39,9 +39,6 @@ export default function Footer() {
         <Flex sx={styles.content}>
           <Flex sx={styles.copyright}>
             <Logo white />
-            <Text as="span">
-              All right reserved - Design &amp; Developed by RedQ, Inc
-            </Text>
           </Flex>
         </Flex>
       </Container>
@@ -51,7 +48,7 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    backgroundColor: '#020718',
+    backgroundColor: '#FF8099',
   },
   content: {
     alignItems: 'center',

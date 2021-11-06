@@ -93,7 +93,7 @@ const styles = {
     backgroundColor: 'transparent',
     '.is-sticky': {
       header: {
-        backgroundColor: '#020718',
+        backgroundColor: '#FF8099',
         boxShadow: '0 6px 13px rgba(38, 78, 118, 0.1)',
         py: [10],
       },
@@ -161,7 +161,7 @@ const styles = {
       margin: '0 20px',
     },
     '.active': {
-      color: 'primary',
+      color: 'secondary',
     },
   },
   joinNow: {
