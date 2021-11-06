@@ -132,7 +132,7 @@ const styles = {
     gap: 2,
     alignItems: 'flex-end',
     display: [null, null, null, null, 'grid'],
-    gridTemplateColumns: [null, null, null, null, 'repeat(4, 1fr)'],
+    gridTemplateColumns: [null, null, null, null, 'repeat(5, 1fr)'],
   },
   features: {
     pl: 0,
