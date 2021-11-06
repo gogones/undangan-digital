@@ -15,7 +15,10 @@ const Subscription = () => {
             title="Ingin membuat undangan mu atau ada yang ingin ditanyakan, jangan ragu untuk hubungi kami"
             description=""
           />
-          <Button variant="white" onClick={`https://wa.me/${contactPerson.nomor}?text=${templatePesan().unknown}`}>Hubungi kami</Button>
+
+          <a href={`https://wa.me/${contactPerson.nomor}?text=${templatePesan().unknown}`} style={{textDecoration: 'none'}}>
+            <Button variant="white">Hubungi kami</Button>
+          </a>
         </Box>
       </Container>
     </Box>

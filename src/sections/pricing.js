@@ -59,7 +59,7 @@ const Pricing = () => {
               <li>Detail Acara</li>
               <li>Maps</li>
               <li>Amplop Digital</li>
-              <li>Gallery Foto & Video</li>
+              <li>Gallery</li>
               <li>Countdown Acara</li>
               <li>Love Story</li>
               <li>Kehadiran Tamu</li>

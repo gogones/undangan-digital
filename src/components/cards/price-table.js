@@ -9,7 +9,7 @@ import {templatePesan} from "../../config/templatePesan";
 const FeatureIcon = ({ value, number }) => {
 
   if (number) {
-    return <span>{value}</span>
+    return <div>{value}</div>
   }
   return value ? (
     <IoMdCheckmarkCircle size="23px" color="#3CC68A" />
@@ -52,7 +52,7 @@ const PriceTable = ({ data }) => {
             <FeatureIcon value={data.amplop} />
           </li>
           <li>
-            <span>Gallery Foto & Video</span>
+            <span>Gallery</span>
             <FeatureIcon number={data.gallery} value={data.gallery} />
           </li>
           <li>
@@ -80,14 +80,15 @@ const PriceTable = ({ data }) => {
             <FeatureIcon number={data.qr} value={data.qr} />
           </li>
         </Box>
-        <Button
-          sx={styles.button}
-          variant="primaryOutline"
-          className={data.isRecommended ? 'recommended' : ''}
-          onClick={`https://wa.me/${contactPerson.nomor}?text=${templatePesan(data.id).tema}`}
-        >
-          Pilih Paket
-        </Button>
+        <a href={`https://wa.me/${contactPerson.nomor}?text=${templatePesan(data.id).tema}`}>
+          <Button
+            sx={styles.button}
+            variant="primaryOutline"
+            className={data.isRecommended ? 'recommended' : ''}
+          >
+            Pilih Paket
+          </Button>
+        </a>
       </div>
     </div>
   );
