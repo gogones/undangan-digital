@@ -15,7 +15,7 @@ const data = [
     commentCount: 22,
     link: '#!',
     title: `Classic Template`,
-    url: 'https://www.wedding.undangin-digital.com/templates/theme1'
+    url: 'https://www.undangan-digital.web.id/isatami'
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const data = [
     commentCount: 15,
     link: '#!',
     title: `Modern Template`,
-    url: 'https://www.wedding.undangin-digital.com/templates/theme2'
+    url: 'https://www.undangan-digital.web.id/virlydimas'
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const data = [
     commentCount: 18,
     link: '#!',
     title: `National Template`,
-    url: 'https://www.wedding.undangin-digital.com/templates/theme3'
+    url: 'https://www.undangan-digital.web.id/templates/theme1'
   },
   {
     id: 4,
@@ -39,16 +39,8 @@ const data = [
     commentCount: 15,
     link: '#!',
     title: `Cozy Template`,
-    url: 'https://www.wedding.undangin-digital.com/templates/theme4'
-  },
-  {
-    id: 5,
-    thumb: thumb1,
-    commentCount: 18,
-    link: '#!',
-    title: `Besto Place Template`,
-    url: 'https://www.wedding.undangin-digital.com/templates/theme5'
-  },
+    url: 'https://www.undangan-digital.web.id/templates/theme2'
+  }
 ];
 
 function SlickArrow({ className, onClick, control }) {
